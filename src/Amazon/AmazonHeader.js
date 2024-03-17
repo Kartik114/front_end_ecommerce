@@ -7,7 +7,7 @@ import { Register } from '../Register';
 import { Login } from '../Login';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../store';
-import { Axios } from 'axios';
+import  Axios  from 'axios';
 export const AmazonHeader = () => {
   
   const { isLoggedIn } = useContext(UserContext);
@@ -20,9 +20,17 @@ export const AmazonHeader = () => {
 
   const dispatch =useDispatch();
   const navigate = useNavigate();
+  const token = useSelector(state=>{return state.token});
   const handleLogout=()=>{
+
+    const config = {
+        headers: { Authorization: `Bearer ${token}` }
+      };
+      console.log(token);
+    Axios.post("http://localhost:9000/api/auth/logout",config)
+    .then((res)=>{console.log(res.data)})
+    
     dispatch(logout());
-    Axios.
     navigate('/');
   }
 

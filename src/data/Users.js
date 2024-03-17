@@ -83,7 +83,7 @@ export const useUsers = (initialVal = []) => {
             var token = res.data.token;
             var username = res.data.username;
             
-             dispatch(setUser({email,id}));
+             dispatch(setUser({email,id,token,username}));
             
             return res; // Returns the matched user or null if not found
         })  
