@@ -8,7 +8,8 @@ const userSlice = createSlice(
             userId: null,
             email: null,
             userName: null,
-            token:null
+            token:null,
+            roles:null
         },
         reducers:{
             setUser: (state, action) => { 
@@ -16,6 +17,7 @@ const userSlice = createSlice(
                 state.userId=action.payload.id;
                 state.userName=action.payload.userName;
                 state.token=action.payload.token;
+                state.roles=action.payload.roles;
             },
              
             logout: (state) => {
@@ -23,6 +25,7 @@ const userSlice = createSlice(
                 state.email=null;
                 state.userName=null;
                 state.token=null;
+                state.roles=null;
             }
         }
     }

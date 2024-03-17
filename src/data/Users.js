@@ -31,6 +31,7 @@ export const useUsers = (initialVal = []) => {
         console.log(users);
         console.log(localStorage.getItem("users"));
         // main branch
+    //   changes in aut-logut
 
     };
 
@@ -83,8 +84,9 @@ export const useUsers = (initialVal = []) => {
             var  email = res.data.email;
             var token = res.data.accessToken;
             var username = res.data.username;
+            var roles = res.data.roles;
             
-             dispatch(setUser({email,id,token,username}));
+             dispatch(setUser({email,id,token,username,roles}));
             
             return res; // Returns the matched user or null if not found
         })  
