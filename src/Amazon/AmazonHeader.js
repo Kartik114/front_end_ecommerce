@@ -22,7 +22,7 @@ export const AmazonHeader = () => {
   const navigate = useNavigate();
   const token = useSelector(state=>{return state.token});
   const handleLogout=()=>{
-
+     console.log("in handleLogout");
     const config = {
         headers: { Authorization: `Bearer ${token}` }
       };

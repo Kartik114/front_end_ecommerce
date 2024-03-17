@@ -80,7 +80,7 @@ export const useUsers = (initialVal = []) => {
             console.log(res);
             var id = res.data.id;
             var  email = res.data.email;
-            var token = res.data.token;
+            var token = res.data.accessToken;
             var username = res.data.username;
             
              dispatch(setUser({email,id,token,username}));
