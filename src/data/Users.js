@@ -27,9 +27,10 @@ export const useUsers = (initialVal = []) => {
     const saveToUsers = (user) => {
            
         // localStorage.setItem("users", JSON.stringify(updatedUsers));
-        // console.log("save to users");
-        // console.log(users);
-        // console.log(localStorage.getItem("users"));
+        console.log("save to users");
+        console.log(users);
+        console.log(localStorage.getItem("users"));
+        // main branch
 
     };
 
@@ -72,7 +73,7 @@ export const useUsers = (initialVal = []) => {
     };
 
     const validateUser = async (email, password) => {
-        console.log(email, password);
+        // console.log(email, password);
         await Axios.post("http://localhost:9000/api/auth/signin",{
             "email":email,
             "password":password
